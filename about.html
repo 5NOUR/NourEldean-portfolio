@@ -3,64 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
+    <meta name="author" content="Nour Eldean" />
+    <meta
+      name="keywords"
+      content="Portfolio, Full Stack Developer, Web Developer, UI UX"
+    />
+    <meta
+      name="description"
+      content="My personal portfolio showcasing my full-stack development projects, skills, and professional journey."
+    />
+    <title>About | Nour Eldean</title>
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
     <header>
       <div class="logo">NT</div>
-      <nav>
+      <!-- زر الهامبرجر - هيظهر في الموبايل فقط -->
+      <button type="button" class="hamburger-menu" id="hamburgerMenu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav id="navbar">
         <ul class="nav">
-          <li class="home"><a href="index.html">Home</a></li>
-          <li class="services"><a href="Services.html">Services</a></li>
-          <li class="about"><a href="about.html">About</a></li>
-          <li class="skills"><a href="skills.html">Skills</a></li>
-          <li class="projects"><a href="projects.html">Projects</a></li>
-          <li class="contact"><a href="contact.html">Contact</a></li>
+          <li class="nav-home"><a href="index.html">Home</a></li>
+          <li class="nav-services"><a href="services.html">Services</a></li>
+          <li class="nav-about active"><a href="about.html">About</a></li>
+          <li class="nav-skills"><a href="skills.html">Skills</a></li>
+          <li class="nav-projects"><a href="projects.html">Projects</a></li>
+          <li class="nav-contact"><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <button type="button" class="let-talk">Let's Talk</button>
     </header>
-    <section class="title-abot">
-      <div id="head">About Me</div>
-      <p class="ser">
+    <section class="title-about">
+      <div class="page-title">About Me</div>
+      <p class="section-description">
         I believe great design and clean code go hand in hand. I'm dedicated to
         creating digital experiences that are not only visually appealing but
         also fast, responsive, and user-friendly.
       </p>
-      <p class="appro">My Approach</p>
+      <p class="section-subtitle">My Approach</p>
     </section>
-    <section class="target">
-      <div class="tar">
+    <section class="approach-section">
+      <div class="approach-card">
         <div class="num">1</div>
-        <div class="desco1">Putting You First</div>
+        <div class="description1">Putting You First</div>
       </div>
-      <div class="tar">
+      <div class="approach-card">
         <div class="num">2</div>
-        <div class="desco">Transparent Process</div>
+        <div class="description">Transparent Process</div>
       </div>
-      <div class="tar">
+      <div class="approach-card">
         <div class="num">3</div>
-        <div class="desco3">Quality First</div>
+        <div class="description3">Quality First</div>
       </div>
-      <div class="tar">
+      <div class="approach-card">
         <div class="num">4</div>
-        <div class="desco">Long-Term Partnership</div>
+        <div class="description">Long-Term Partnership</div>
       </div>
     </section>
-    <section class="sum">
-      <div class="el">
+    <section class="stats">
+      <div class="stat-card">
         <div class="numbers">03+</div>
         <div class="desc">Years Of Experience</div>
       </div>
-      <div class="el">
+      <div class="stat-card">
         <div class="numbers">15+</div>
         <div class="desc">Completed projects</div>
       </div>
-      <div class="el">
+      <div class="stat-card">
         <div class="numbers">11+</div>
         <div class="desc">Clients served</div>
       </div>
     </section>
+    <div class="overlay" id="overlay"></div>
+    <script src="script.js"></script>
   </body>
 </html>

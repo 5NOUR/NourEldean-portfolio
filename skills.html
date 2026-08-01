@@ -3,30 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skills</title>
+    <meta name="author" content="Nour Eldean" />
+    <meta
+      name="keywords"
+      content="Portfolio, Full Stack Developer, Web Developer, UI UX"
+    />
+    <meta
+      name="description"
+      content="My personal portfolio showcasing my full-stack development projects, skills, and professional journey."
+    />
+    <title>Skills | Nour Eldean</title>
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
     <header>
       <div class="logo">NT</div>
-      <nav>
+      <!-- زر الهامبرجر - هيظهر في الموبايل فقط -->
+      <button type="button" class="hamburger-menu" id="hamburgerMenu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav id="navbar">
         <ul class="nav">
-          <li class="home"><a href="index.html">Home</a></li>
-          <li class="services"><a href="Services.html">Services</a></li>
-          <li class="about"><a href="about.html">About</a></li>
-          <li class="skills"><a href="skills.html">Skills</a></li>
-          <li class="projects"><a href="projects.html">Projects</a></li>
-          <li class="contact"><a href="contact.html">Contact</a></li>
+          <li class="nav-home"><a href="index.html">Home</a></li>
+          <li class="nav-services"><a href="services.html">Services</a></li>
+          <li class="nav-about"><a href="about.html">About</a></li>
+          <li class="nav-skills active"><a href="skills.html">Skills</a></li>
+          <li class="nav-projects"><a href="projects.html">Projects</a></li>
+          <li class="nav-contact"><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <button type="button" class="let-talk">Let's Talk</button>
     </header>
     <section class="title-skill">
-      <div id="head">Skills</div>
-      <p class="ser">Your vision + my expertise = outstanding results</p>
+      <div class="page-title">Skills</div>
+      <p class="section-description">
+        Your vision + my expertise = outstanding results
+      </p>
     </section>
-    <section class="sec">
-      <div>UI/UX Ddesign</div>
+    <section class="skills">
+      <div>UI/UX Design</div>
       <div>Frontend</div>
       <div>Backend</div>
       <div>Hosting</div>
@@ -34,31 +51,33 @@
     </section>
     <section class="icon-skill">
       <div class="icon-top">
-        <img class="backend" src="assets/media/back2.png" alt="" />
-        <img class="backend" src="assets/media/back3.png" alt="" />
-        <img class="backend" src="assets/media/back4.png" alt="" />
-        <img class="backend" src="assets/media/back5.png" alt="" />
-        <img class="frontend" src="assets/media/front1.png" alt="" />
-        <img class="frontend" src="assets/media/front2.png" alt="" />
-        <img class="frontend" src="assets/media/front3.png" alt="" />
-        <img class="frontend" src="assets/media/front4.png" alt="" />
-        <img class="frontend" src="assets/media/front5.png" alt="" />
-        <img class="frontend" src="assets/media/front6.png" alt="" />
-        <img class="host" src="assets/media/hos1.png" alt="" />
-        <img class="host" src="assets/media/host2.png" alt="" />
+        <img class="backend" src="assets/media/back2.png" alt="Git" />
+        <img class="backend" src="assets/media/back3.png" alt="MongoDB" />
+        <img class="backend" src="assets/media/back4.png" alt="Node.JS" />
+        <img class="backend" src="assets/media/back5.png" alt="Python" />
+        <img class="frontend" src="assets/media/front1.png" alt="CSS" />
+        <img class="frontend" src="assets/media/front2.png" alt="JavaScript" />
+        <img class="frontend" src="assets/media/front3.png" alt="HTML" />
+        <img class="frontend" src="assets/media/front4.png" alt="React JS" />
+        <img class="frontend" src="assets/media/front5.png" alt="TailWind" />
+        <img class="frontend" src="assets/media/front6.png" alt="TypeScript" />
+        <img class="host" src="assets/media/hos1.png" alt="AWS" />
+        <img class="host" src="assets/media/host2.png" alt="Netlify" />
       </div>
       <div class="icon-but">
-        <img class="ui" src="assets/media/ui1.png" alt="" />
-        <img class="ui" src="assets/media/ui2.png" alt="" />
-        <img class="backend" src="assets/media/back1.png" alt="" />
-        <img class="ui" src="assets/media/ui3.png" alt="" />
-        <img class="ui" src="assets/media/ui4.png" alt="" />
-        <img class="host" src="assets/media/host3.png" alt="" />
-        <img class="host" src="assets/media/host4.png" alt="" />
-        <img class="Other" src="assets/media/other1.png" alt="" />
-        <img class="Other" src="assets/media/other2.png" alt="" />
-        <img class="Other" src="assets/media/other3.png" alt="" />
+        <img class="ui" src="assets/media/ui1.png" alt="Illustrator" />
+        <img class="ui" src="assets/media/ui2.png" alt="Photoshop" />
+        <img class="backend" src="assets/media/back1.png" alt="API Express" />
+        <img class="ui" src="assets/media/ui3.png" alt="Adobe XD" />
+        <img class="ui" src="assets/media/ui4.png" alt="Figma" />
+        <img class="host" src="assets/media/host3.png" alt="Vercel" />
+        <img class="host" src="assets/media/host4.png" alt="Docer" />
+        <img class="other" src="assets/media/other1.png" alt="VS-Code" />
+        <img class="other" src="assets/media/other2.png" alt="Notion" />
+        <img class="other" src="assets/media/other3.png" alt="Git Hub" />
       </div>
     </section>
+    <div class="overlay" id="overlay"></div>
+    <script src="script.js"></script>
   </body>
 </html>

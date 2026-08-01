@@ -369,6 +369,74 @@ hr.services {
 .active a {
   color: #e9b002;
 }
+/* ============================================= */
+/*            HAMBURGER MENU STYLES              */
+/* ============================================= */
+
+.hamburger-menu {
+  display: none; /* مختفي في الشاشات الكبيرة */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 45px;
+  height: 45px;
+  background: #1b1b1b;
+  border: solid #2d2d2d 2px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1001;
+  transition: 0.3s;
+}
+
+.hamburger-menu .bar {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* تحويل الهامبرجر لـ X لما يتفتح */
+.hamburger-menu.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ============================================= */
+/*            SIDE MENU (NAV) STYLES             */
+/* ============================================= */
+
+/* Overlay */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Side Menu Container */
+#navbar {
+  transition: right 0.3s ease;
+}
 
 /* ============================================= */
 /*            MEDIA QUERIES                      */
@@ -550,26 +618,97 @@ hr.services {
 /* موبايل كبير (480px إلى 768px) */
 @media (max-width: 768px) {
   header {
-    margin: 15px 15px 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 20px 0 20px;
+    position: relative;
   }
+  .hamburger-menu {
+    display: flex;
+    order: 2;
+  }
+
   .logo {
+    order: 1;
     width: 50px;
     height: 50px;
     font-size: 20px;
   }
-  nav {
-    font-size: 16px;
-    border-radius: 15px;
-  }
-  .nav {
-    gap: 8px;
-  }
   .let-talk {
+    order: 3;
     width: 80px;
     height: 35px;
     font-size: 14px;
-    border-radius: 15px;
   }
+  #navbar {
+    position: fixed;
+    top: 0;
+    right: -320px; /* مخفي على اليمين */
+    width: 280px;
+    height: 100vh;
+    background: #1b1b1b;
+    border-left: solid #2d2d2d 3px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 100px;
+    transition: right 0.3s ease;
+    border-radius: 0; /* نشيل البوردر راديوس */
+  }
+
+  /* لما القايمة تظهر */
+  #navbar.active {
+    right: 0;
+  }
+
+  /* تعديل شكل الـ nav جوه الـ side menu */
+  #navbar .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  #navbar .nav li {
+    width: 80%;
+    text-align: center;
+  }
+
+  #navbar .nav li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 12px 0;
+    transition: 0.3s;
+    border-radius: 10px;
+  }
+
+  #navbar .nav li a:hover {
+    background: #2d2d2d;
+    color: #e9b002;
+  }
+
+  /* تعديل الـ underline animation للـ side menu */
+  #navbar .nav a::after {
+    bottom: 5px;
+  }
+
+  /* الـ active link */
+  #navbar .active a {
+    color: #e9b002;
+    background: #2d2d2d;
+    border-radius: 10px;
+  }
+
   .hero-home img {
     width: 220px;
   }
@@ -675,29 +814,45 @@ hr.services {
 /* موبايل صغير (أقل من 480px) */
 @media (max-width: 480px) {
   header {
-    flex-direction: column;
-    gap: 12px;
-    margin: 10px 10px 0 10px;
+    margin: 10px 15px 0 15px;
   }
+
+  .hamburger-menu {
+    width: 40px;
+    height: 40px;
+    gap: 5px;
+  }
+
+  .hamburger-menu .bar {
+    width: 22px;
+    height: 2.5px;
+  }
+
+  #navbar {
+    width: 260px;
+    right: -280px;
+    padding-top: 80px;
+  }
+
+  #navbar .nav {
+    gap: 25px;
+  }
+
+  #navbar .nav li a {
+    font-size: 20px;
+    padding: 10px 0;
+  }
+
   .logo {
     width: 45px;
     height: 45px;
     font-size: 18px;
   }
-  nav {
-    width: 100%;
-    font-size: 14px;
-    padding: 8px 5px;
-    border-radius: 12px;
-  }
-  .nav {
-    gap: 6px;
-  }
+
   .let-talk {
     width: 70px;
     height: 30px;
     font-size: 12px;
-    border-radius: 12px;
   }
   .hero-home img {
     width: 180px;

@@ -3,11 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nour Eldean" />
+    <meta
+      name="keywords"
+      content="Portfolio, Full Stack Developer, Web Developer, UI UX"
+    />
     <meta
       name="description"
       content="My personal portfolio showcasing my full-stack development projects, skills, and professional journey."
     />
-    <title>Portfplio | Nour Eldean Tamer</title>
+    <title>Portfolio | Nour Eldean Tamer</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -15,42 +20,50 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div class="main">
+    <main>
       <header>
         <div class="logo">NT</div>
-        <nav>
+        <!-- زر الهامبرجر - هيظهر في الموبايل فقط -->
+        <button type="button" class="hamburger-menu" id="hamburgerMenu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <nav id="navbar">
           <ul class="nav">
-            <li class="home"><a href="index.html">Home</a></li>
-            <li class="services"><a href="Services.html">Services</a></li>
-            <li class="about"><a href="about.html">About</a></li>
-            <li class="skills"><a href="skills.html">Skills</a></li>
-            <li class="projects"><a href="projects.html">Projects</a></li>
-            <li class="contact"><a href="contact.html">Contact</a></li>
+            <li class="nav-home active"><a href="index.html">Home</a></li>
+            <li class="nav-services"><a href="services.html">Services</a></li>
+            <li class="nav-about"><a href="about.html">About</a></li>
+            <li class="nav-skills"><a href="skills.html">Skills</a></li>
+            <li class="nav-projects"><a href="projects.html">Projects</a></li>
+            <li class="nav-contact"><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
         <button type="button" class="let-talk">Let's Talk</button>
       </header>
-      <section class="home">
-        <div class="main-contant">
-          <div class="name">I'm Nour Eldean</div>
-          <div class="jop">
+      <section class="hero-home">
+        <div class="main-content">
+          <h3 class="name">I'm Nour Eldean</h3>
+          <h1 class="job">
             Fullstack <br />
             Developer & Designer
-          </div>
-          <p class="des">
+          </h1>
+          <p class="hero-description">
             I'm a creative developer who loves blending design thinking with
             clean code. Every project is an opportunity to learn something new
             and push the boundaries of what's possible on the web. My goal is
             always to build experiences that users love and remember.
           </p>
         </div>
-        <img src="assets/media/MyPhoto.png" alt="My Photo" />
+        <img src="assets/media/MyPhoto.png" alt="Portrait of Nour Eldean" />
       </section>
       <button class="cv">Download My CV</button>
-      <div class="icon">
+      <div class="social-icons">
         <i class="fa-brands fa-whatsapp"></i>
         <i class="fa-brands fa-github"></i>
       </div>
-    </div>
+    </main>
+    <div class="overlay" id="overlay"></div>
+    <script src="script.js"></script>
   </body>
 </html>
