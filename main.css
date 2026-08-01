@@ -645,7 +645,7 @@ hr.services {
   #navbar {
     position: fixed;
     top: 0;
-    right: -320px; /* مخفي على اليمين */
+    right: -290px; /* كان -320px، خليناه -290px عشان يخفي كل حاجة */
     width: 280px;
     height: 100vh;
     background: #1b1b1b;
@@ -655,13 +655,18 @@ hr.services {
     justify-content: center;
     align-items: flex-start;
     padding-top: 100px;
-    transition: right 0.3s ease;
-    border-radius: 0; /* نشيل البوردر راديوس */
+    transition:
+      right 0.3s ease,
+      visibility 0.3s ease; /* ضفنا visibility للـ transition */
+    visibility: hidden; /* مخفي تماماً وهو مقفول */
+    pointer-events: none; /* يمنع أي تفاعل معاه وهو مقفول */
   }
 
   /* لما القايمة تظهر */
   #navbar.active {
     right: 0;
+    visibility: visible; /* يظهر */
+    pointer-events: auto; /* يسمح بالتفاعل */
   }
 
   /* تعديل شكل الـ nav جوه الـ side menu */
