@@ -3,32 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services</title>
+    <meta name="author" content="Nour Eldean" />
+    <meta
+      name="keywords"
+      content="Portfolio, Full Stack Developer, Web Developer, UI UX"
+    />
+    <meta
+      name="description"
+      content="My personal portfolio showcasing my full-stack development projects, skills, and professional journey."
+    />
+    <title>Services | Nour Eldean</title>
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
     <header>
       <div class="logo">NT</div>
-      <nav>
+      <!-- زر الهامبرجر - هيظهر في الموبايل فقط -->
+      <button type="button" class="hamburger-menu" id="hamburgerMenu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav id="navbar">
         <ul class="nav">
-          <li class="home"><a href="index.html">Home</a></li>
-          <li class="services"><a href="Services.html">Services</a></li>
-          <li class="about"><a href="about.html">About</a></li>
-          <li class="skills"><a href="skills.html">Skills</a></li>
-          <li class="projects"><a href="projects.html">Projects</a></li>
-          <li class="contact"><a href="contact.html">Contact</a></li>
+          <li class="nav-home"><a href="index.html">Home</a></li>
+          <li class="nav-services active">
+            <a href="services.html">Services</a>
+          </li>
+          <li class="nav-about"><a href="about.html">About</a></li>
+          <li class="nav-skills"><a href="skills.html">Skills</a></li>
+          <li class="nav-projects"><a href="projects.html">Projects</a></li>
+          <li class="nav-contact"><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <button type="button" class="let-talk">Let's Talk</button>
     </header>
     <section class="title-serv">
-      <div id="head">Services</div>
-      <p class="ser">Your vision + my expertise = outstanding results</p>
+      <div class="page-title">Services</div>
+      <p class="section-description">
+        Your vision + my expertise = outstanding results
+      </p>
     </section>
     <section class="cards">
       <div class="card">
-        <div class="ui">UI/UX<br />Design</div>
-        <p class="ui">
+        <div class="service-title">UI/UX<br />Design</div>
+        <p class="service-description">
           I design intuitive and visually appealing interfaces that prioritize
           user experience. From wireframes to pixel-perfect mockups, I create
           designs that are not only beautiful but also functional and
@@ -39,8 +58,8 @@
         <div class="min-card">User-Centered Approach</div>
       </div>
       <div class="card">
-        <div class="front">Frontend<br />Development</div>
-        <p class="front">
+        <div class="service-title">Frontend<br />Development</div>
+        <p class="service-description">
           I build responsive, high-performance web interfaces using modern
           technologies like React and Tailwind CSS. My focus is on creating
           smooth, interactive experiences that work flawlessly across all
@@ -51,8 +70,8 @@
         <div class="min-card">Performance Obsessed</div>
       </div>
       <div class="card">
-        <div class="back">Backend<br />Development</div>
-        <p class="back">
+        <div class="service-title">Backend<br />Development</div>
+        <p class="service-description">
           I build robust, scalable server-side solutions using Node.js and
           Express. From RESTful APIs to database management, I ensure your
           application runs securely, efficiently, and can handle growth.
@@ -62,8 +81,8 @@
         <div class="min-card">Scalable Architecture</div>
       </div>
       <div class="card">
-        <div class="dom">Domain &<br />Hosting Services</div>
-        <p class="dom">
+        <div class="service-title">Domain &<br />Hosting Services</div>
+        <p class="service-description">
           I help you get your website online quickly and reliably. From domain
           registration to hosting setup and deployment, I handle all the
           technical details so you can focus on your business.
@@ -73,5 +92,7 @@
         <div class="min-card">Ongoing Support & Maintenance</div>
       </div>
     </section>
+    <div class="overlay" id="overlay"></div>
+    <script src="script.js"></script>
   </body>
 </html>
