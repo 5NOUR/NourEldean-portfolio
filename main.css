@@ -1,3 +1,7 @@
+html {
+  font-size: 16px;
+  overflow-x: hidden;
+}
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +9,15 @@
 body {
   background: black;
   color: white;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 header {
   display: flex;
-  margin: 25px 49px 0 49px;
+  margin: 1.5% 4% 0 4%;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 .logo {
   display: flex;
@@ -24,7 +31,7 @@ header {
   font-size: 24px;
   cursor: pointer;
 }
-.main-contant {
+.main-content {
   margin: 0;
   padding: 0;
 }
@@ -32,7 +39,8 @@ nav {
   display: flex;
   background-color: #1b1b1b;
   border: solid #2d2d2d 3px;
-  width: 554px;
+  width: auto;
+  max-width: 60%;
   height: 51px;
   justify-content: center;
   align-items: center;
@@ -58,20 +66,20 @@ nav {
   border-radius: 22px;
   cursor: pointer;
 }
-.home {
+.hero-home {
   display: flex;
   justify-content: space-between;
   position: relative;
 }
-.home img {
+.hero-home img {
   position: absolute;
   right: 96px;
   width: 409px;
   height: 546px;
 }
 .name,
-.jop,
-.des {
+.job,
+.hero-description {
   margin-left: 84px;
 }
 .name {
@@ -79,13 +87,13 @@ nav {
   font-size: 23px;
   font-weight: 300;
 }
-.jop {
+.job {
   margin-top: 17px;
   font-size: 50px;
   font-weight: 900;
   line-height: 114.2%;
 }
-.des {
+.hero-description {
   margin-top: 17px;
   font-size: 24px;
   font-weight: normal;
@@ -106,7 +114,7 @@ nav {
   color: white;
   cursor: pointer;
 }
-.icon {
+.social-icons {
   display: flex;
   justify-content: space-between;
   width: 109px;
@@ -114,7 +122,7 @@ nav {
   margin-left: 117px;
   margin-top: 25px;
 }
-.icon i {
+.social-icons i {
   cursor: pointer;
 }
 .title-serv {
@@ -122,12 +130,12 @@ nav {
   flex-direction: column;
   align-items: center;
 }
-.title-serv #head {
+.title-serv .page-title {
   font-size: 64px;
   font-weight: 900;
   margin-top: 30px;
 }
-.title-serv .ser {
+.title-serv .section-description {
   font-size: 24px;
   font-weight: normal;
 }
@@ -150,24 +158,16 @@ nav {
   padding-bottom: 14px;
   box-shadow: rgb(255 241 241 / 23%) 16px 13px 24px 0px;
 }
-.ui,
-.front,
-.back,
-.dom {
+.service-title,
+.service-description {
   margin-left: 15px;
 }
-div.ui,
-div.front,
-div.back,
-div.dom {
+.service-title {
   margin-top: 15px;
   font-size: 32px;
   font-weight: 800;
 }
-p.ui,
-p.front,
-p.back,
-p.dom {
+.service-description {
   font-size: 16px;
   font-weight: normal;
   width: 235px;
@@ -192,36 +192,36 @@ hr.services {
   color: white;
   border-radius: 22px;
 }
-.title-abot {
+.title-about {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.title-abot #head {
+.title-about .page-title {
   font-size: 64px;
   font-weight: 900;
   margin-top: 84px;
 }
-.title-abot .ser {
+.title-about .section-description {
   font-size: 24px;
   font-weight: normal;
   text-align: center;
   width: 1188px;
   margin-top: 35px;
 }
-.appro {
+.section-subtitle {
   font-size: 40px;
   margin-top: 44px;
   font-weight: 600;
 }
-.target {
+.approach-section {
   display: flex;
   justify-content: space-between;
   gap: 30px;
   margin-left: 67px;
   margin-right: 67px;
 }
-.tar {
+.approach-card {
   display: flex;
   flex-direction: row;
   width: 328px;
@@ -237,7 +237,7 @@ hr.services {
   font-size: 23px;
   border: solid #2d2d2d 3px;
 }
-.tar .num {
+.approach-card .num {
   background: white;
   width: 27px;
   height: 28px;
@@ -248,23 +248,23 @@ hr.services {
   align-items: center;
   /* margin-right: 25px; */
 }
-.desco {
+.description {
   margin-right: 40px;
 }
-.desco1 {
+.description1 {
   margin-right: 60px;
 }
-.desco3 {
+.description3 {
   margin-right: 80px;
 }
-.sum {
+.stats {
   display: flex;
   justify-content: space-between;
   margin-left: 441px;
   margin-right: 441px;
   margin-top: 55px;
 }
-.el {
+.stat-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -284,18 +284,18 @@ hr.services {
   flex-direction: column;
   align-items: center;
 }
-.title-skill #head {
+.title-skill .page-title {
   font-size: 64px;
   font-weight: 900;
   margin-top: 84px;
 }
-.title-skill .ser {
+.title-skill .section-description {
   font-size: 24px;
   font-weight: normal;
   text-align: center;
   margin-top: 10px;
 }
-.sec div {
+.skills div {
   display: flex;
   justify-content: center;
   width: 227px;
@@ -310,7 +310,7 @@ hr.services {
   font-weight: 900;
   border: solid #2d2d2d 3px;
 }
-.sec {
+.skills {
   margin-left: 167px;
   margin-right: 167px;
   display: flex;
@@ -322,8 +322,8 @@ hr.services {
   margin-top: 61px;
 }
 .icon-top {
-  margin-left: 79.5px;
-  margin-right: 79.5px;
+  margin-left: 70px;
+  margin-right: 70px;
 }
 .icon-top img {
   margin-right: 12.5px;
@@ -337,4 +337,33 @@ hr.services {
 .icon-but img {
   margin-left: 11px;
   margin-right: 11px;
+}
+
+.nav a {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #e9b002;
+  transition: 0.3s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.active a::after {
+  width: 100%;
+}
+
+.active a {
+  color: #e9b002;
 }
