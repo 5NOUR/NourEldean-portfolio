@@ -645,7 +645,7 @@ hr.services {
   #navbar {
     position: fixed;
     top: 0;
-    right: -290px; /* كان -320px، خليناه -290px عشان يخفي كل حاجة */
+    right: -200px; /* كان -320px، خليناه -290px عشان يخفي كل حاجة */
     width: 280px;
     height: 100vh;
     background: #1b1b1b;
@@ -659,7 +659,8 @@ hr.services {
       right 0.3s ease,
       visibility 0.3s ease; /* ضفنا visibility للـ transition */
     visibility: hidden; /* مخفي تماماً وهو مقفول */
-    pointer-events: none; /* يمنع أي تفاعل معاه وهو مقفول */
+    pointer-events: none;
+    overflow: hidden; /* يمنع أي تفاعل معاه وهو مقفول */
   }
 
   /* لما القايمة تظهر */
