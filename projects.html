@@ -13,22 +13,280 @@
       content="My personal portfolio showcasing my full-stack development projects, skills, and professional journey."
     />
     <title>Projects | Nour Eldean</title>
-    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      />
+    </noscript>
+    <link rel="stylesheet" href="main-min.css" />
+    <!-- Google Fonts - Poppins + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <canvas id="starsCanvas"></canvas>
+
     <header>
       <div class="logo">NT</div>
-      <nav>
+
+      <button type="button" class="hamburger-menu" id="hamburgerMenu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav id="navbar">
         <ul class="nav">
           <li class="nav-home"><a href="index.html">Home</a></li>
           <li class="nav-services"><a href="services.html">Services</a></li>
           <li class="nav-about"><a href="about.html">About</a></li>
           <li class="nav-skills"><a href="skills.html">Skills</a></li>
-          <li class="nav-projects"><a href="projects.html">Projects</a></li>
+          <li class="nav-projects active">
+            <a href="projects.html">Projects</a>
+          </li>
           <li class="nav-contact"><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+
       <button type="button" class="let-talk">Let's Talk</button>
     </header>
+
+    <!-- ====== PAGE TITLE ====== -->
+    <section class="title-projects">
+      <div class="page-title">Projects</div>
+      <p class="section-description">Here's what I've been working on lately</p>
+    </section>
+
+    <!-- ====== FILTER BUTTONS ====== -->
+    <section class="filter-buttons">
+      <button type="button" class="filter-btn active" data-filter="all">
+        All
+      </button>
+      <button type="button" class="filter-btn" data-filter="fullstack">
+        Full Stack
+      </button>
+      <button type="button" class="filter-btn" data-filter="frontend">
+        Frontend
+      </button>
+      <button type="button" class="filter-btn" data-filter="uiux">
+        UI/UX Design
+      </button>
+    </section>
+
+    <!-- ====== PROJECTS GRID ====== -->
+    <section class="projects-grid">
+      <!-- Project Card 1 -->
+      <div class="project-card" data-category="fullstack">
+        <div class="project-image">
+          <img src="assets/media/project.png" alt="E-Commerce Project" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+              <a href="#" target="_blank" class="project-link">
+                <i class="fa-brands fa-github"></i> Source Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-category">Full Stack</span>
+          <h3 class="project-title">E-Commerce Platform</h3>
+          <p class="project-description">
+            A fully functional e-commerce platform with cart, payment
+            integration, and admin dashboard.
+          </p>
+          <div class="project-tech">
+            <span>React</span>
+            <span>Node.js</span>
+            <span>MongoDB</span>
+            <span>Stripe</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="project-card" data-category="frontend">
+        <div class="project-image">
+          <img src="assets/media/project.png" alt="Dashboard Project" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+              <a href="#" target="_blank" class="project-link">
+                <i class="fa-brands fa-github"></i> Source Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-category">Frontend</span>
+          <h3 class="project-title">Analytics Dashboard</h3>
+          <p class="project-description">
+            A responsive analytics dashboard with interactive charts, data
+            tables, and real-time updates.
+          </p>
+          <div class="project-tech">
+            <span>React</span>
+            <span>TypeScript</span>
+            <span>Tailwind CSS</span>
+            <span>Chart.js</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 3 -->
+      <div class="project-card" data-category="uiux">
+        <div class="project-image">
+          <img src="assets/media/project.png" alt="Banking App Design" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link">
+                <i class="fa-brands fa-figma"></i> Figma File
+              </a>
+              <a href="#" target="_blank" class="project-link">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Prototype
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-category">UI/UX Design</span>
+          <h3 class="project-title">Banking App Redesign</h3>
+          <p class="project-description">
+            Complete redesign of a banking mobile app with focus on
+            accessibility and user flow.
+          </p>
+          <div class="project-tech">
+            <span>Figma</span>
+            <span>Adobe XD</span>
+            <span>Illustrator</span>
+            <span>Prototyping</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 4 -->
+      <div class="project-card" data-category="fullstack">
+        <div class="project-image">
+          <img src="assets/media/project.png" alt="Blog Platform" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+              <a href="#" target="_blank" class="project-link">
+                <i class="fa-brands fa-github"></i> Source Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-category">Full Stack</span>
+          <h3 class="project-title">Blog CMS Platform</h3>
+          <p class="project-description">
+            A headless CMS blog with markdown support, SEO optimization, and
+            lightning-fast performance.
+          </p>
+          <div class="project-tech">
+            <span>Next.js</span>
+            <span>PostgreSQL</span>
+            <span>Prisma</span>
+            <span>MDX</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 5 -->
+      <div class="project-card" data-category="frontend">
+        <div class="project-image">
+          <img src="assets/media/project.png" alt="Weather App" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+              <a href="#" target="_blank" class="project-link">
+                <i class="fa-brands fa-github"></i> Source Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-category">Frontend</span>
+          <h3 class="project-title">Weather Forecast App</h3>
+          <p class="project-description">
+            A beautiful weather app with 7-day forecasts, interactive maps, and
+            location-based updates.
+          </p>
+          <div class="project-tech">
+            <span>Vue.js</span>
+            <span>CSS Grid</span>
+            <span>REST API</span>
+            <span>PWA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 6 -->
+      <div class="project-card" data-category="uiux">
+        <div class="project-image">
+          <img src="assets/media/project.png" alt="Portfolio Design" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link">
+                <i class="fa-brands fa-figma"></i> Figma File
+              </a>
+              <a href="#" target="_blank" class="project-link">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Case
+                Study
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-category">UI/UX Design</span>
+          <h3 class="project-title">Portfolio Design System</h3>
+          <p class="project-description">
+            A complete design system with components, typography scale, and dark
+            theme guidelines.
+          </p>
+          <div class="project-tech">
+            <span>Figma</span>
+            <span>Design Tokens</span>
+            <span>Auto Layout</span>
+            <span>Components</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== NO PROJECTS MESSAGE ====== -->
+    <div class="no-projects-message" id="noProjectsMessage">
+      <i class="fa-solid fa-folder-open"></i>
+      <p>No projects found in this category</p>
+    </div>
+
+    <script src="script-min.js"></script>
   </body>
 </html>

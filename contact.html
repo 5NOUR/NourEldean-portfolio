@@ -13,22 +13,181 @@
       content="My personal portfolio showcasing my full-stack development projects, skills, and professional journey."
     />
     <title>Contact | Nour Eldean</title>
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="main-min.css" />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      />
+    </noscript>
+    <!-- Google Fonts - Poppins + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <div class="logo">NT</div>
-      <nav>
+
+      <button type="button" class="hamburger-menu" id="hamburgerMenu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav id="navbar">
         <ul class="nav">
           <li class="nav-home"><a href="index.html">Home</a></li>
           <li class="nav-services"><a href="services.html">Services</a></li>
           <li class="nav-about"><a href="about.html">About</a></li>
           <li class="nav-skills"><a href="skills.html">Skills</a></li>
           <li class="nav-projects"><a href="projects.html">Projects</a></li>
-          <li class="nav-contact"><a href="contact.html">Contact</a></li>
+          <li class="nav-contact active"><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+
       <button type="button" class="let-talk">Let's Talk</button>
     </header>
+
+    <!-- ====== HERO SECTION ====== -->
+    <section class="contact-hero">
+      <div class="contact-hero-image">
+        <img src="assets/media/contact.png" alt="Contact Background" />
+        <div class="contact-hero-overlay"></div>
+      </div>
+      <div class="contact-hero-content">
+        <h1 class="contact-hero-title">Get In Touch</h1>
+        <p class="contact-hero-subtitle">
+          Have a project in mind? Let's make it happen.
+        </p>
+      </div>
+    </section>
+
+    <!-- ====== CONTACT FORM SECTION ====== -->
+    <section class="contact-form-section">
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-info-card">
+            <i class="fa-solid fa-envelope"></i>
+            <h3>Email</h3>
+            <p>tamernoureledan@gmail.com</p>
+          </div>
+          <div class="contact-info-card">
+            <i class="fa-solid fa-phone"></i>
+            <h3>Phone</h3>
+            <p>+20 155 404 2400</p>
+          </div>
+          <div class="contact-info-card">
+            <i class="fa-solid fa-location-dot"></i>
+            <h3>Location</h3>
+            <p>Cairo, Egypt</p>
+          </div>
+          <div class="contact-info-card social-card">
+            <i class="fa-brands fa-whatsapp"></i>
+            <h3>WhatsApp</h3>
+            <a
+              href="https://wa.me/201554042400"
+              target="_blank"
+              class="social-link"
+              >Start Chat</a
+            >
+          </div>
+
+          <div class="contact-info-card social-card">
+            <i class="fa-brands fa-github"></i>
+            <h3>GitHub</h3>
+            <a
+              href="https://github.com/5NOUR"
+              target="_blank"
+              class="social-link"
+              >View Profile</a
+            >
+          </div>
+        </div>
+
+        <form class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Mohamed Ahmed"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="mohamed@example.com"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              placeholder="Project Discussion"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              rows="6"
+              placeholder="Tell me about your project..."
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            <span>Send Message</span>
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+      <!-- ====== SOCIAL QUICK LINKS ====== -->
+      <div class="social-quick-links">
+        <p class="social-quick-title">Or reach me directly</p>
+        <div class="social-quick-icons">
+          <a
+            href="https://wa.me/201554042400"
+            target="_blank"
+            class="quick-icon whatsapp-icon"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WhatsApp</span>
+          </a>
+          <a
+            href="https://github.com/5NOUR"
+            target="_blank"
+            class="quick-icon github-icon"
+          >
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script src="script-min.js"></script>
   </body>
 </html>

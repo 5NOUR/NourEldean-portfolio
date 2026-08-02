@@ -14,16 +14,37 @@
     />
     <title>Portfolio | Nour Eldean Tamer</title>
     <link
-      rel="stylesheet"
+      rel="preload"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
-    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      />
+    </noscript>
+    <link rel="stylesheet" href="main-min.css" />
+    <!-- Google Fonts - Poppins + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <canvas id="starsCanvas"></canvas>
+
     <main>
       <header>
         <div class="logo">NT</div>
-        <!-- زر الهامبرجر - هيظهر في الموبايل فقط -->
         <button type="button" class="hamburger-menu" id="hamburgerMenu">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -55,7 +76,14 @@
             always to build experiences that users love and remember.
           </p>
         </div>
-        <img src="assets/media/MyPhoto.png" alt="Portrait of Nour Eldean" />
+        <img
+          src="assets/media/MyPhoto.png"
+          alt="Portrait of Nour Eldean"
+          fetchpriority="high"
+          loading="eager"
+          width="409"
+          height="546"
+        />
       </section>
       <button class="cv">Download My CV</button>
       <div class="social-icons">
@@ -63,7 +91,6 @@
         <i class="fa-brands fa-github"></i>
       </div>
     </main>
-    <div class="overlay" id="overlay"></div>
-    <script src="script.js"></script>
+    <script src="script-min.js"></script>
   </body>
 </html>

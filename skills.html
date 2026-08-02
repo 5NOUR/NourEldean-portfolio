@@ -13,12 +13,22 @@
       content="My personal portfolio showcasing my full-stack development projects, skills, and professional journey."
     />
     <title>Skills | Nour Eldean</title>
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="main-min.css" />
+    <!-- Google Fonts - Poppins + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <canvas id="starsCanvas"></canvas>
+
     <header>
       <div class="logo">NT</div>
-      <!-- زر الهامبرجر - هيظهر في الموبايل فقط -->
+
       <button type="button" class="hamburger-menu" id="hamburgerMenu">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -43,41 +53,150 @@
       </p>
     </section>
     <section class="skills">
-      <div>UI/UX Design</div>
-      <div>Frontend</div>
-      <div>Backend</div>
-      <div>Hosting</div>
-      <div>Other</div>
+      <div class="skill-card active" data-filter="uiux">UI/UX Design</div>
+      <div class="skill-card" data-filter="frontend">Frontend</div>
+      <div class="skill-card" data-filter="backend">Backend</div>
+      <div class="skill-card" data-filter="hosting">Hosting</div>
+      <div class="skill-card" data-filter="other">Other</div>
     </section>
     <section class="icon-skill">
       <div class="icon-top">
-        <img class="backend" src="assets/media/back2.png" alt="Git" />
-        <img class="backend" src="assets/media/back3.png" alt="MongoDB" />
-        <img class="backend" src="assets/media/back4.png" alt="Node.JS" />
-        <img class="backend" src="assets/media/back5.png" alt="Python" />
-        <img class="frontend" src="assets/media/front1.png" alt="CSS" />
-        <img class="frontend" src="assets/media/front2.png" alt="JavaScript" />
-        <img class="frontend" src="assets/media/front3.png" alt="HTML" />
-        <img class="frontend" src="assets/media/front4.png" alt="React JS" />
-        <img class="frontend" src="assets/media/front5.png" alt="TailWind" />
-        <img class="frontend" src="assets/media/front6.png" alt="TypeScript" />
-        <img class="host" src="assets/media/hos1.png" alt="AWS" />
-        <img class="host" src="assets/media/host2.png" alt="Netlify" />
+        <img
+          class="backend"
+          src="assets/media/back2.png"
+          alt="Git"
+          data-category="backend"
+        />
+        <img
+          class="backend"
+          src="assets/media/back3.png"
+          alt="MongoDB"
+          data-category="backend"
+        />
+        <img
+          class="backend"
+          src="assets/media/back4.png"
+          alt="Node.JS"
+          data-category="backend"
+        />
+        <img
+          class="backend"
+          src="assets/media/back5.png"
+          alt="Python"
+          data-category="backend"
+        />
+        <img
+          class="frontend"
+          src="assets/media/front1.png"
+          alt="CSS"
+          data-category="frontend"
+        />
+        <img
+          class="frontend"
+          src="assets/media/front2.png"
+          alt="JavaScript"
+          data-category="frontend"
+        />
+        <img
+          class="frontend"
+          src="assets/media/front3.png"
+          alt="HTML"
+          data-category="frontend"
+        />
+        <img
+          class="frontend"
+          src="assets/media/front4.png"
+          alt="React JS"
+          data-category="frontend"
+        />
+        <img
+          class="frontend"
+          src="assets/media/front5.png"
+          alt="TailWind"
+          data-category="frontend"
+        />
+        <img
+          class="frontend"
+          src="assets/media/front6.png"
+          alt="TypeScript"
+          data-category="frontend"
+        />
+        <img
+          class="host"
+          src="assets/media/hos1.png"
+          alt="AWS"
+          data-category="hosting"
+        />
+        <img
+          class="host"
+          src="assets/media/host2.png"
+          alt="Netlify"
+          data-category="hosting"
+        />
       </div>
       <div class="icon-but">
-        <img class="ui" src="assets/media/ui1.png" alt="Illustrator" />
-        <img class="ui" src="assets/media/ui2.png" alt="Photoshop" />
-        <img class="backend" src="assets/media/back1.png" alt="API Express" />
-        <img class="ui" src="assets/media/ui3.png" alt="Adobe XD" />
-        <img class="ui" src="assets/media/ui4.png" alt="Figma" />
-        <img class="host" src="assets/media/host3.png" alt="Vercel" />
-        <img class="host" src="assets/media/host4.png" alt="Docer" />
-        <img class="other" src="assets/media/other1.png" alt="VS-Code" />
-        <img class="other" src="assets/media/other2.png" alt="Notion" />
-        <img class="other" src="assets/media/other3.png" alt="Git Hub" />
+        <img
+          class="ui"
+          src="assets/media/ui1.png"
+          alt="Illustrator"
+          data-category="uiux"
+        />
+        <img
+          class="ui"
+          src="assets/media/ui2.png"
+          alt="Photoshop"
+          data-category="uiux"
+        />
+        <img
+          class="backend"
+          src="assets/media/back1.png"
+          alt="API Express"
+          data-category="backend"
+        />
+        <img
+          class="ui"
+          src="assets/media/ui3.png"
+          alt="Adobe XD"
+          data-category="uiux"
+        />
+        <img
+          class="ui"
+          src="assets/media/ui4.png"
+          alt="Figma"
+          data-category="uiux"
+        />
+        <img
+          class="host"
+          src="assets/media/host3.png"
+          alt="Vercel"
+          data-category="hosting"
+        />
+        <img
+          class="host"
+          src="assets/media/host4.png"
+          alt="Docer"
+          data-category="hosting"
+        />
+        <img
+          class="other"
+          src="assets/media/other1.png"
+          alt="VS-Code"
+          data-category="other"
+        />
+        <img
+          class="other"
+          src="assets/media/other2.png"
+          alt="Notion"
+          data-category="other"
+        />
+        <img
+          class="other"
+          src="assets/media/other3.png"
+          alt="Git Hub"
+          data-category="other"
+        />
       </div>
     </section>
-    <div class="overlay" id="overlay"></div>
-    <script src="script.js"></script>
+    <script src="script-min.js"></script>
   </body>
 </html>
